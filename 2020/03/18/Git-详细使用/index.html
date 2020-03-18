@@ -105,18 +105,18 @@
 <meta property="og:site_name" content="DH&#39;s Blog">
 <meta property="og:description" content="1、Git简介1.1、Git是什么？ Git是一个免费的开源 分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有内容。 Git 易于学习， 占地面积小，具有闪电般的快速性能。它具有Subversion，CVS，Perforce和ClearCase之类的SCM工具，具有廉价的本地分支，方便的暂存区域和 多个工作流等功能。  1.2、Git有哪些优势？ 官方的讲： 从一般开发者的角度来看，g">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://www.dinghit.cn/2020/03/18/Git-详细使用/%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95.png">
-<meta property="og:image" content="http://www.dinghit.cn/.cn//next_vim.png">
-<meta property="og:image" content="http://www.dinghit.cn/.cn//path.png">
-<meta property="og:image" content="http://www.dinghit.cn/.cn//default.png">
-<meta property="og:image" content="http://www.dinghit.cn/.cn//line_end.png">
-<meta property="og:image" content="http://www.dinghit.cn/.cn//terminal.png">
-<meta property="og:image" content="http://www.dinghit.cn/.cn//cache.png">
+<meta property="og:image" content="https://github.com/itdh/itdh.github.io/tree/master/2020/03/18/Git-%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95.png">
+<meta property="og:image" content="https://github.com/itdh/itdh.github.io/tree/master/2020/03/18/Git-%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/next_vim.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020031823293491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020031823294218.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318233004739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200318233013956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020031823303355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-03-18T13:25:03.000Z">
-<meta property="article:modified_time" content="2020-03-18T15:10:51.447Z">
+<meta property="article:modified_time" content="2020-03-18T15:35:54.039Z">
 <meta property="article:author" content="Ding Huang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.dinghit.cn/.cn//%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95.png">
+<meta name="twitter:image" content="https://github.com/itdh/itdh.github.io/tree/master/2020/03/18/Git-%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95.png">
 
 
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.9k word
+                  4k word
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  14 minute
+                  15 minute
                 </span>
               
             </div>
@@ -458,20 +458,18 @@
 </blockquote>
 <h2 id="2、安装Git"><a href="#2、安装Git" class="headerlink" title="2、安装Git"></a>2、安装Git</h2><blockquote>
 <p>下载地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git下载地址</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;GeNXZaJdnBLWHMj.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;5RxSHMdPj3gI4r1.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;eJdNayCTfUFt9nD.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;4u2SLhbnXEytspN.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;RCK6m1OihYyfTt8.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;Ts9teX6ZABDl1MH.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;PaOjKAH1JywlFTr.png</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>安装目录：</p>
-<img src="/.cn//安装目录.png">
-
-
-
+<p><img src="https://github.com/itdh/itdh.github.io/tree/master/2020/03/18/Git-%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95.png" alt=""></p>
 <p>Next：</p>
-<p><img src="/.cn//next_vim.png" alt></p>
+<p><img src="https://github.com/itdh/itdh.github.io/tree/master/2020/03/18/Git-%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/next_vim.png" alt=""></p>
 <p>注意：</p>
-<p><img src="/.cn//path.png" alt></p>
-<p><img src="/.cn//default.png" alt></p>
-<p><img src="/.cn//line_end.png" alt></p>
-<p><img src="/.cn//terminal.png" alt></p>
-<p><img src="/.cn//cache.png" alt></p>
+<p><img src="https://img-blog.csdnimg.cn/2020031823293491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020031823294218.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/20200318233004739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/20200318233013956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://img-blog.csdnimg.cn/2020031823303355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70" alt=""></p>
 <h2 id="3、Git结构"><a href="#3、Git结构" class="headerlink" title="3、Git结构"></a>3、Git结构</h2><h4 id="3-1、工作区"><a href="#3-1、工作区" class="headerlink" title="3.1、工作区"></a>3.1、工作区</h4><blockquote>
 <p>写代码：我们写代码的地方</p>
 </blockquote>
@@ -1062,7 +1060,7 @@ $ cat id_rsa.pub
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.9k字</span>
+  <span class="post-count">博客全站共4k字</span>
 </div>
 -->
 
