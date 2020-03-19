@@ -56,10 +56,10 @@
 <p>团队内部协作<br>跨团队协作</p>
 </blockquote>
 <h2 id="4、Git命令行操作"><a href="#4、Git命令行操作" class="headerlink" title="4、Git命令行操作"></a>4、Git命令行操作</h2><h4 id="4-1、本地库操作"><a href="#4-1、本地库操作" class="headerlink" title="4.1、本地库操作"></a>4.1、本地库操作</h4><h5 id="4-1-1、本地库初始化"><a href="#4-1-1、本地库初始化" class="headerlink" title="4.1.1、本地库初始化"></a>4.1.1、本地库初始化</h5><p><strong>创建项目：</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">mkdir 项目名</span></span><br><span class="line">mkdir WeChat</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">mkdir 项目名</span></span><br><span class="line">mkdir WeChat</span><br></pre></td></tr></table></figure></div>
 
 <p><strong>命令：</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></div>
 
 <p><strong>效果：</strong></p>
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/xiaoguo.png" alt=""></p>
@@ -90,17 +90,17 @@
 <ul>
 <li>项目级别/仓库级别：仅在当前本地库范围有效</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git config 用户名  密码</span></span><br><span class="line">git config user.name tom_pro</span><br><span class="line">git config user.email goodMoring_pro@163.com</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git config 用户名  密码</span></span><br><span class="line">git config user.name tom_pro</span><br><span class="line">git config user.email goodMoring_pro@163.com</span><br></pre></td></tr></table></figure></div>
 
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat .git/config	--&gt; 项目级别的信息保存目录</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">cat .git/config	--&gt; 项目级别的信息保存目录</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/config.png" alt=""></p>
 <ul>
 <li>系统用户级别：登录当前操作系统的用户范围</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git config --global 用户名  密码</span></span><br><span class="line">git config --global user.name tom_glo</span><br><span class="line">git config --global user.email goodMoring_glo@163.com</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git config --global 用户名  密码</span></span><br><span class="line">git config --global user.name tom_glo</span><br><span class="line">git config --global user.email goodMoring_glo@163.com</span><br></pre></td></tr></table></figure></div>
 
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ~</span><br><span class="line">cat .gitconfig --&gt; 系统级别的信息保存目录</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">cd ~</span><br><span class="line">cat .gitconfig --&gt; 系统级别的信息保存目录</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/gitconfig.png" alt=""></p>
 <ul>
@@ -117,30 +117,30 @@
 </li>
 </ul>
 </blockquote>
-<h5 id="4-1-2、全局相关设置"><a href="#4-1-2、全局相关设置" class="headerlink" title="4.1.2、全局相关设置"></a>4.1.2、全局相关设置</h5><h6 id="4-1-2-1、查看全局配置"><a href="#4-1-2-1、查看全局配置" class="headerlink" title="4.1.2.1、查看全局配置"></a>4.1.2.1、查看全局配置</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<h5 id="4-1-2、全局相关设置"><a href="#4-1-2、全局相关设置" class="headerlink" title="4.1.2、全局相关设置"></a>4.1.2、全局相关设置</h5><h6 id="4-1-2-1、查看全局配置"><a href="#4-1-2-1、查看全局配置" class="headerlink" title="4.1.2.1、查看全局配置"></a>4.1.2.1、查看全局配置</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure></div>
 
-<h6 id="4-1-2-2、设置全局签名"><a href="#4-1-2-2、设置全局签名" class="headerlink" title="4.1.2.2、设置全局签名"></a>4.1.2.2、设置全局签名</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "输入你的用户名"</span><br><span class="line">git config --global user.email "输入你的邮箱"</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-2-2、设置全局签名"><a href="#4-1-2-2、设置全局签名" class="headerlink" title="4.1.2.2、设置全局签名"></a>4.1.2.2、设置全局签名</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "输入你的用户名"</span><br><span class="line">git config --global user.email "输入你的邮箱"</span><br></pre></td></tr></table></figure></div>
 
 <p>4.1.2.3、修改全局配置</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --replace-all user.name "输入你的用户名"</span><br><span class="line">git config --global --replace-all user.email "输入你的邮箱"</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git config --global --replace-all user.name "输入你的用户名"</span><br><span class="line">git config --global --replace-all user.email "输入你的邮箱"</span><br></pre></td></tr></table></figure></div>
 
-<h5 id="4-1-3、基本操作"><a href="#4-1-3、基本操作" class="headerlink" title="4.1.3、基本操作"></a>4.1.3、基本操作</h5><h6 id="4-1-3-1、查看状态"><a href="#4-1-3-1、查看状态" class="headerlink" title="4.1.3.1、查看状态"></a>4.1.3.1、查看状态</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看工作区、暂存区状态</span></span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<h5 id="4-1-3、基本操作"><a href="#4-1-3、基本操作" class="headerlink" title="4.1.3、基本操作"></a>4.1.3、基本操作</h5><h6 id="4-1-3-1、查看状态"><a href="#4-1-3-1、查看状态" class="headerlink" title="4.1.3.1、查看状态"></a>4.1.3.1、查看状态</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看工作区、暂存区状态</span></span><br><span class="line">git status</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/status.jpg" alt=""></p>
-<h6 id="4-1-3-2、创建文件"><a href="#4-1-3-2、创建文件" class="headerlink" title="4.1.3.2、创建文件"></a>4.1.3.2、创建文件</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">vim [File Name]</span></span><br><span class="line">vim good.txt</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-3-2、创建文件"><a href="#4-1-3-2、创建文件" class="headerlink" title="4.1.3.2、创建文件"></a>4.1.3.2、创建文件</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">vim [File Name]</span></span><br><span class="line">vim good.txt</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/new_file.jpg" alt=""></p>
 <p><strong>创建文件后查看状态：</strong></p>
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_status.jpg" alt=""></p>
-<h6 id="4-1-3-3、工作区添加到暂存区"><a href="#4-1-3-3、工作区添加到暂存区" class="headerlink" title="4.1.3.3、工作区添加到暂存区"></a>4.1.3.3、工作区添加到暂存区</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git add [File Name]</span></span><br><span class="line">git add good.txt</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-3-3、工作区添加到暂存区"><a href="#4-1-3-3、工作区添加到暂存区" class="headerlink" title="4.1.3.3、工作区添加到暂存区"></a>4.1.3.3、工作区添加到暂存区</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git add [File Name]</span></span><br><span class="line">git add good.txt</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_add.jpg" alt=""></p>
 <p><strong>添加后查看状态：</strong></p>
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_status2.jpg" alt=""></p>
-<h6 id="4-1-3-4、从缓存区撤回"><a href="#4-1-3-4、从缓存区撤回" class="headerlink" title="4.1.3.4、从缓存区撤回"></a>4.1.3.4、从缓存区撤回</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git rm --cached [File Name]</span></span><br><span class="line">git rm --cached good.txt</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-3-4、从缓存区撤回"><a href="#4-1-3-4、从缓存区撤回" class="headerlink" title="4.1.3.4、从缓存区撤回"></a>4.1.3.4、从缓存区撤回</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git rm --cached [File Name]</span></span><br><span class="line">git rm --cached good.txt</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_rm_cache.jpg" alt=""></p>
-<h6 id="4-1-3-5、暂存区提交到本地库"><a href="#4-1-3-5、暂存区提交到本地库" class="headerlink" title="4.1.3.5、暂存区提交到本地库"></a>4.1.3.5、暂存区提交到本地库</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">第一种提交：git commit [File Name]</span></span><br><span class="line">git commit good.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">常用提交：git commit -m <span class="string">"[commit message]"</span> [File Name]</span></span><br><span class="line">git commit -m "My second commit,modify good.txt" good.txt</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-3-5、暂存区提交到本地库"><a href="#4-1-3-5、暂存区提交到本地库" class="headerlink" title="4.1.3.5、暂存区提交到本地库"></a>4.1.3.5、暂存区提交到本地库</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">第一种提交：git commit [File Name]</span></span><br><span class="line">git commit good.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">常用提交：git commit -m <span class="string">"[commit message]"</span> [File Name]</span></span><br><span class="line">git commit -m "My second commit,modify good.txt" good.txt</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_commit1.jpg" alt=""></p>
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_commit2.jpg" alt=""></p>
@@ -148,33 +148,33 @@
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_after_commit.jpg" alt=""></p>
 <h6 id="4-1-3-6、修改文件后情况"><a href="#4-1-3-6、修改文件后情况" class="headerlink" title="4.1.3.6、修改文件后情况"></a>4.1.3.6、修改文件后情况</h6><p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/update_file.jpg" alt=""></p>
 <p><strong>添加到暂存区：</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add [fileName]</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git add [fileName]</span><br></pre></td></tr></table></figure></div>
 
 <p><strong>提交到本地库：</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git commit -m "desc" [fileName]</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git commit -m "desc" [fileName]</span><br></pre></td></tr></table></figure></div>
 
 <h6 id="4-1-3-7、查看历史记录【版本】控制"><a href="#4-1-3-7、查看历史记录【版本】控制" class="headerlink" title="4.1.3.7、查看历史记录【版本】控制"></a>4.1.3.7、查看历史记录【版本】控制</h6><p><strong>历史记录直观感受：</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_log.jpg" alt=""></p>
 <p>如果日志信息【版本】很多，会导致一屏放不下，使用下面的命令，会变得好一点</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log --pretty=oneline</span><br><span class="line">git log --oneline  --&gt; 只显示历史版本</span><br><span class="line">git reflog  --&gt; 显示所有版本</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git log --pretty=oneline</span><br><span class="line">git log --oneline  --&gt; 只显示历史版本</span><br><span class="line">git reflog  --&gt; 显示所有版本</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_log1.jpg" alt=""></p>
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_log2.jpg" alt=""></p>
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_log3.jpg" alt=""></p>
 <h6 id="4-1-3-8、前进后退历史记录"><a href="#4-1-3-8、前进后退历史记录" class="headerlink" title="4.1.3.8、前进后退历史记录"></a>4.1.3.8、前进后退历史记录</h6><p>4.1.3.8.1、基于索引值操作【推荐】</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git reset --hard [索引]</span></span><br><span class="line">git reset --hard 51d4ed9</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git reset --hard [索引]</span></span><br><span class="line">git reset --hard 51d4ed9</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/reset_hard.jpg" alt=""></p>
 <p>4.1.3.8.2、使用^符号</p>
 <blockquote>
 <p>只能往后，不能往前，一个^符号，表示退一步</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br><span class="line">git reset --hard HEAD^^</span><br><span class="line">git reset --hard HEAD^^^</span><br><span class="line">……</span><br><span class="line">git reset --hard HEAD^^^^…………^^</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br><span class="line">git reset --hard HEAD^^</span><br><span class="line">git reset --hard HEAD^^^</span><br><span class="line">……</span><br><span class="line">git reset --hard HEAD^^^^…………^^</span><br></pre></td></tr></table></figure></div>
 
 <p>4.1.3.8.3、使用~符号</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD~3</span><br><span class="line">git reset --hard HEAD~10 --&gt; 相当于10个^符号</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD~3</span><br><span class="line">git reset --hard HEAD~10 --&gt; 相当于10个^符号</span><br></pre></td></tr></table></figure></div>
 
 <p>4.1.3.8.4、hard和soft和mixed参数对比</p>
 <ul>
@@ -196,26 +196,26 @@
 </ul>
 </li>
 </ul>
-<h6 id="4-1-2-9、永久删除文件并找回"><a href="#4-1-2-9、永久删除文件并找回" class="headerlink" title="4.1.2.9、永久删除文件并找回"></a>4.1.2.9、永久删除文件并找回</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm [File Name]</span><br><span class="line">rm aaa.txt</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-2-9、永久删除文件并找回"><a href="#4-1-2-9、永久删除文件并找回" class="headerlink" title="4.1.2.9、永久删除文件并找回"></a>4.1.2.9、永久删除文件并找回</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">rm [File Name]</span><br><span class="line">rm aaa.txt</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/rm1.jpg" alt=""></p>
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/rm2.jpg" alt=""></p>
 <p><strong>版本回退，找回文件</strong></p>
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/recover_file.jpg" alt=""></p>
-<h6 id="4-1-2-10、文件比较"><a href="#4-1-2-10、文件比较" class="headerlink" title="4.1.2.10、文件比较"></a>4.1.2.10、文件比较</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git diff [File Name]  --&gt; 将工作区的文件和暂存区的对应文件进行比较 </span></span><br><span class="line">git diff apple.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">git diff [本地库历史版本] [File Name] --&gt; 将工作区的文件和本地库历史记录进行比较  </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff HEAD^ apple.txt</span></span><br></pre></td></tr></table></figure>
+<h6 id="4-1-2-10、文件比较"><a href="#4-1-2-10、文件比较" class="headerlink" title="4.1.2.10、文件比较"></a>4.1.2.10、文件比较</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git diff [File Name]  --&gt; 将工作区的文件和暂存区的对应文件进行比较 </span></span><br><span class="line">git diff apple.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">git diff [本地库历史版本] [File Name] --&gt; 将工作区的文件和本地库历史记录进行比较  </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff HEAD^ apple.txt</span></span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/diff1.jpg" alt=""></p>
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/diff2.jpg" alt=""></p>
-<h5 id="4-1-4、分支管理"><a href="#4-1-4、分支管理" class="headerlink" title="4.1.4、分支管理"></a>4.1.4、分支管理</h5><h6 id="4-1-4-1、查看所有分支"><a href="#4-1-4-1、查看所有分支" class="headerlink" title="4.1.4.1、查看所有分支"></a>4.1.4.1、查看所有分支</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -v</span><br></pre></td></tr></table></figure>
+<h5 id="4-1-4、分支管理"><a href="#4-1-4、分支管理" class="headerlink" title="4.1.4、分支管理"></a>4.1.4、分支管理</h5><h6 id="4-1-4-1、查看所有分支"><a href="#4-1-4-1、查看所有分支" class="headerlink" title="4.1.4.1、查看所有分支"></a>4.1.4.1、查看所有分支</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line">git branch -v</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/show_branch.jpg" alt=""></p>
-<h6 id="4-1-4-2、创建分支"><a href="#4-1-4-2、创建分支" class="headerlink" title="4.1.4.2、创建分支"></a>4.1.4.2、创建分支</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git branch [分支]</span></span><br><span class="line">git branch hot_fix</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-4-2、创建分支"><a href="#4-1-4-2、创建分支" class="headerlink" title="4.1.4.2、创建分支"></a>4.1.4.2、创建分支</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git branch [分支]</span></span><br><span class="line">git branch hot_fix</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/create_branch.jpg" alt=""></p>
-<h6 id="4-1-4-3、删除分支"><a href="#4-1-4-3、删除分支" class="headerlink" title="4.1.4.3、删除分支"></a>4.1.4.3、删除分支</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git branch -D [分支名]</span></span><br><span class="line">git branch -D asd</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-4-3、删除分支"><a href="#4-1-4-3、删除分支" class="headerlink" title="4.1.4.3、删除分支"></a>4.1.4.3、删除分支</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git branch -D [分支名]</span></span><br><span class="line">git branch -D asd</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/delete_branch.jpg" alt=""></p>
-<h6 id="4-1-4-4、切换分支"><a href="#4-1-4-4、切换分支" class="headerlink" title="4.1.4.4、切换分支"></a>4.1.4.4、切换分支</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git checkout [分支]</span></span><br><span class="line">git checkout hot_fix</span><br></pre></td></tr></table></figure>
+<h6 id="4-1-4-4、切换分支"><a href="#4-1-4-4、切换分支" class="headerlink" title="4.1.4.4、切换分支"></a>4.1.4.4、切换分支</h6><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git checkout [分支]</span></span><br><span class="line">git checkout hot_fix</span><br></pre></td></tr></table></figure></div>
 
 <p><img src="https://itdh.github.io/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/checkout_branck.jpg" alt=""></p>
 <h6 id="4-1-4-5、合并分支"><a href="#4-1-4-5、合并分支" class="headerlink" title="4.1.4.5、合并分支"></a>4.1.4.5、合并分支</h6><p><strong>合并之前：两条分支的版本都是一样的</strong></p>
