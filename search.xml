@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Git 详细使用</title>
+    <title>Git-详细使用</title>
     <url>/2020/03/18/Git-%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="1、Git简介"><a href="#1、Git简介" class="headerlink" title="1、Git简介"></a>1、Git简介</h2><h4 id="1-1、Git是什么？"><a href="#1-1、Git是什么？" class="headerlink" title="1.1、Git是什么？"></a>1.1、Git是什么？</h4><blockquote>
 <p>Git是一个免费的开源 分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有内容。</p>
@@ -25,333 +25,243 @@
 </blockquote>
 <h2 id="2、安装Git"><a href="#2、安装Git" class="headerlink" title="2、安装Git"></a>2、安装Git</h2><blockquote>
 <p>下载地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git下载地址</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;GeNXZaJdnBLWHMj.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;5RxSHMdPj3gI4r1.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;eJdNayCTfUFt9nD.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;4u2SLhbnXEytspN.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;RCK6m1OihYyfTt8.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;Ts9teX6ZABDl1MH.png</span><br><span class="line">https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;03&#x2F;18&#x2F;PaOjKAH1JywlFTr.png</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>安装目录：</p>
-<p><img src="https://github.com/itdh/itdh.github.io/tree/master/2020/03/18/Git-%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95.png" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/content.png" alt=""></p>
 <p>Next：</p>
-<p><img src="https://github.com/itdh/itdh.github.io/tree/master/2020/03/18/Git-%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/next_vim.png" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/vim.png" alt=""></p>
 <p>注意：</p>
-<p><img src="https://img-blog.csdnimg.cn/2020031823293491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p><img src="https://img-blog.csdnimg.cn/2020031823294218.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p><img src="https://img-blog.csdnimg.cn/20200318233004739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p><img src="https://img-blog.csdnimg.cn/20200318233013956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p><img src="https://img-blog.csdnimg.cn/2020031823303355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MzU4Njc5,size_16,color_FFFFFF,t_70" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/path.png" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/default.png" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/line_end.png" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/terminal.png" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/cache.png" alt=""></p>
 <h2 id="3、Git结构"><a href="#3、Git结构" class="headerlink" title="3、Git结构"></a>3、Git结构</h2><h4 id="3-1、工作区"><a href="#3-1、工作区" class="headerlink" title="3.1、工作区"></a>3.1、工作区</h4><blockquote>
 <p>写代码：我们写代码的地方</p>
 </blockquote>
-<h4 id="3-2、暂存区"><a href="#3-2、暂存区" class="headerlink" title="3.2、暂存区"></a>3.2、暂存区</h4><pre><code>临时存储；打算提交的东西，但是暂时还没提交，暂时先存在这儿，后续可以提交到本地库，也可以撤回来</code></pre><h4 id="3-3、本地库"><a href="#3-3、本地库" class="headerlink" title="3.3、本地库"></a>3.3、本地库</h4><pre><code>历史版本</code></pre><h4 id="3-4、如何使用"><a href="#3-4、如何使用" class="headerlink" title="3.4、如何使用"></a>3.4、如何使用</h4><pre><code>工作区 ----git add ----暂存区 ----git commit ----工作区</code></pre><h4 id="3-5、Git和托管中心"><a href="#3-5、Git和托管中心" class="headerlink" title="3.5、Git和托管中心"></a>3.5、Git和托管中心</h4><pre><code>托管中心作用：维护远程库
+<h4 id="3-2、暂存区"><a href="#3-2、暂存区" class="headerlink" title="3.2、暂存区"></a>3.2、暂存区</h4><blockquote>
+<p>临时存储：打算提交的东西，但是暂时还没提交，暂时先存在这儿，后续可以提交到本地库，也可以撤回来</p>
+</blockquote>
+<h4 id="3-3、本地库"><a href="#3-3、本地库" class="headerlink" title="3.3、本地库"></a>3.3、本地库</h4><blockquote>
+<p>历史版本</p>
+</blockquote>
+<h4 id="3-4、如何使用"><a href="#3-4、如何使用" class="headerlink" title="3.4、如何使用"></a>3.4、如何使用</h4><blockquote>
+<p>工作区 —-git add —-暂存区 —-git commit —-本地库</p>
+</blockquote>
+<h4 id="3-5、Git和托管中心"><a href="#3-5、Git和托管中心" class="headerlink" title="3.5、Git和托管中心"></a>3.5、Git和托管中心</h4><blockquote>
+<p>托管中心作用：维护远程库</p>
+<p>​    局域网环境下<br>​        GitLab服务器<br>​    外网环境下<br>​        GitHub<br>​        码云</p>
+</blockquote>
+<h4 id="3-6、本地库和远程库"><a href="#3-6、本地库和远程库" class="headerlink" title="3.6、本地库和远程库"></a>3.6、本地库和远程库</h4><blockquote>
+<p>团队内部协作<br>跨团队协作</p>
+</blockquote>
+<h2 id="4、Git命令行操作"><a href="#4、Git命令行操作" class="headerlink" title="4、Git命令行操作"></a>4、Git命令行操作</h2><h4 id="4-1、本地库操作"><a href="#4-1、本地库操作" class="headerlink" title="4.1、本地库操作"></a>4.1、本地库操作</h4><h5 id="4-1-1、本地库初始化"><a href="#4-1-1、本地库初始化" class="headerlink" title="4.1.1、本地库初始化"></a>4.1.1、本地库初始化</h5><p><strong>创建项目：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">mkdir 项目名</span></span><br><span class="line">mkdir WeChat</span><br></pre></td></tr></table></figure>
 
-    局域网环境下
-        GitLab服务器
-    外网环境下
-        GitHub
-        码云</code></pre><h4 id="3-6、本地库和远程库"><a href="#3-6、本地库和远程库" class="headerlink" title="3.6、本地库和远程库"></a>3.6、本地库和远程库</h4><pre><code>团队内部协作
-跨团队协作</code></pre><p>4、Git命令行操作<br>4.1、本地库操作<br>4.1.1、本地库初始化</p>
-<p>创建项目：</p>
-<p>#mkdir 项目名<br>mkdir HelloWord</p>
-<pre><code>1
-2</code></pre><p>命令：</p>
-<p>git init</p>
-<pre><code>1</code></pre><p>效果：</p>
-<p>注意：</p>
-<pre><code>.git目录中存放的是本地库相关的子目录和文件，不要删除 ，也不要胡乱修改</code></pre><p>4.1.1.1、设置签名</p>
-<pre><code>签名形式：
-    用户名：Tom
-    Email地址：kjljd@qq.com -------------------------&gt; 用户名和邮箱不用一致，邮箱错误也可以，不会发邮 件，仅仅是一个身份的代表，相当于id-
+<p><strong>命令：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 
-签名作用：
-    区分开发人员的身份
+<p><strong>效果：</strong></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/xiaoguo.png" alt=""></p>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p>.git目录中存放的是本地库相关的子目录和文件，不要删除 ，也不要胡乱修改</p>
+</blockquote>
+<h6 id="4-1-1-1、设置签名"><a href="#4-1-1-1、设置签名" class="headerlink" title="4.1.1.1、设置签名"></a>4.1.1.1、设置签名</h6><ul>
+<li><p>签名形式：</p>
+<ul>
+<li>用户名：Tom</li>
+<li>Email地址：<a href="mailto:kjljd@dh.com">kjljd@dh.com</a> （ 用户名和邮箱不用一致，邮箱错误也可以，不会发邮 件，仅仅是一个身份的代表，相当于id）</li>
+</ul>
+</li>
+<li><p>签名作用：</p>
+<ul>
+<li>区分开发人员的身份</li>
+</ul>
+</li>
+<li><p>辨析：</p>
+<ul>
+<li>这里的 签名用户名和Email、 和 登录远程库（代码托管中心）的账号和密码没有关系</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>设置签名命令：</p>
+<ul>
+<li>项目级别/仓库级别：仅在当前本地库范围有效</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git config 用户名  密码</span></span><br><span class="line">git config user.name tom_pro</span><br><span class="line">git config user.email goodMoring_pro@163.com</span><br></pre></td></tr></table></figure>
 
-辨析：
-    这里的 签名用户名和Email、 和 登录远程库（代码托管中心）dd额账号和密码没有关系
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat .git/config	--&gt; 项目级别的信息保存目录</span><br></pre></td></tr></table></figure>
 
-设置签名命令：
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/config.png" alt=""></p>
+<ul>
+<li>系统用户级别：登录当前操作系统的用户范围</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git config --global 用户名  密码</span></span><br><span class="line">git config --global user.name tom_glo</span><br><span class="line">git config --global user.email goodMoring_glo@163.com</span><br></pre></td></tr></table></figure>
 
-    项目级别/仓库级别：仅在当前本地库范围有效
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ~</span><br><span class="line">cat .gitconfig --&gt; 系统级别的信息保存目录</span><br></pre></td></tr></table></figure>
 
-#git config 用户名  密码
-git config user.name tom_pro
-git config user.email goodMoring_pro@163.com
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/gitconfig.png" alt=""></p>
+<ul>
+<li><p>优先级：</p>
+<ul>
+<li><p>就近原则，项目级别优先于系统用户级别，二者都有时采用项目级别 </p>
+<p>的签名 。</p>
+</li>
+<li><p>如果只有系统用户级别的签名，就以系统用户级别的签名为准。</p>
+</li>
+<li><p>二者都没有不允许。</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h5 id="4-1-2、全局相关设置"><a href="#4-1-2、全局相关设置" class="headerlink" title="4.1.2、全局相关设置"></a>4.1.2、全局相关设置</h5><h6 id="4-1-2-1、查看全局配置"><a href="#4-1-2-1、查看全局配置" class="headerlink" title="4.1.2.1、查看全局配置"></a>4.1.2.1、查看全局配置</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
 
-    1
-    2
-    3
+<h6 id="4-1-2-2、设置全局签名"><a href="#4-1-2-2、设置全局签名" class="headerlink" title="4.1.2.2、设置全局签名"></a>4.1.2.2、设置全局签名</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "输入你的用户名"</span><br><span class="line">git config --global user.email "输入你的邮箱"</span><br></pre></td></tr></table></figure>
 
-cat .git/config        ----------------------&gt;项目级别的信息保存目录
+<p>4.1.2.3、修改全局配置</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --replace-all user.name "输入你的用户名"</span><br><span class="line">git config --global --replace-all user.email "输入你的邮箱"</span><br></pre></td></tr></table></figure>
 
-    1
+<h5 id="4-1-3、基本操作"><a href="#4-1-3、基本操作" class="headerlink" title="4.1.3、基本操作"></a>4.1.3、基本操作</h5><h6 id="4-1-3-1、查看状态"><a href="#4-1-3-1、查看状态" class="headerlink" title="4.1.3.1、查看状态"></a>4.1.3.1、查看状态</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查看工作区、暂存区状态</span></span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
 
-    系统用户级别：登录当前操作系统的用户范围
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/status.jpg" alt=""></p>
+<h6 id="4-1-3-2、创建文件"><a href="#4-1-3-2、创建文件" class="headerlink" title="4.1.3.2、创建文件"></a>4.1.3.2、创建文件</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">vim [File Name]</span></span><br><span class="line">vim good.txt</span><br></pre></td></tr></table></figure>
 
-#git config --global 用户名  密码
-git config --global user.name tom_glo
-git config --global user.email goodMoring_glo@163.com
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/new_file.jpg" alt=""></p>
+<p><strong>创建文件后查看状态：</strong></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_status.jpg" alt=""></p>
+<h6 id="4-1-3-3、工作区添加到暂存区"><a href="#4-1-3-3、工作区添加到暂存区" class="headerlink" title="4.1.3.3、工作区添加到暂存区"></a>4.1.3.3、工作区添加到暂存区</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git add [File Name]</span></span><br><span class="line">git add good.txt</span><br></pre></td></tr></table></figure>
 
-    1
-    2
-    3
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_add.jpg" alt=""></p>
+<p><strong>添加后查看状态：</strong></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_status2.jpg" alt=""></p>
+<h6 id="4-1-3-4、从缓存区撤回"><a href="#4-1-3-4、从缓存区撤回" class="headerlink" title="4.1.3.4、从缓存区撤回"></a>4.1.3.4、从缓存区撤回</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git rm --cached [File Name]</span></span><br><span class="line">git rm --cached good.txt</span><br></pre></td></tr></table></figure>
 
-cd ~
-cat .gitconfig        ----------------------&gt;系统级别的信息保存目录
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_rm_cache.jpg" alt=""></p>
+<h6 id="4-1-3-5、暂存区提交到本地库"><a href="#4-1-3-5、暂存区提交到本地库" class="headerlink" title="4.1.3.5、暂存区提交到本地库"></a>4.1.3.5、暂存区提交到本地库</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">第一种提交：git commit [File Name]</span></span><br><span class="line">git commit good.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">常用提交：git commit -m <span class="string">"[commit message]"</span> [File Name]</span></span><br><span class="line">git commit -m "My second commit,modify good.txt" good.txt</span><br></pre></td></tr></table></figure>
 
-    1
-    2
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_commit1.jpg" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_commit2.jpg" alt=""></p>
+<p><strong>提交之后查看：</strong></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_after_commit.jpg" alt=""></p>
+<h6 id="4-1-3-6、修改文件后情况"><a href="#4-1-3-6、修改文件后情况" class="headerlink" title="4.1.3.6、修改文件后情况"></a>4.1.3.6、修改文件后情况</h6><p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/update_file.jpg" alt=""></p>
+<p><strong>添加到暂存区：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add [fileName]</span><br></pre></td></tr></table></figure>
 
-    优先级：
-        就近原则，项目级别&gt;系统级别</code></pre><p>示范：项目级别</p>
-<p>在这里插入图片描述</p>
-<p>示范：系统级别</p>
-<p>在这里插入图片描述</p>
-<p>在这里插入图片描述<br>4.1.2、全局相关设置<br>4.1.2.1、查看全局配置</p>
-<p>git config –list</p>
-<pre><code>1</code></pre><p>4.1.2.2、设置全局签名</p>
-<p>git config –global user.name “输入你的用户名”<br>git config –global user.email “输入你的邮箱”</p>
-<pre><code>1
-2</code></pre><p>4.1.2.3、修改全局配置</p>
-<p>git config –global –replace-all user.name “输入你的用户名”<br>git config –global –replace-all user.email “输入你的邮箱”</p>
-<pre><code>1
-2</code></pre><p>4.1.2、基本操作<br>4.1.2.1、查看的状态</p>
-<p>git status</p>
-<pre><code>1</code></pre><p>在这里插入图片描述<br>4.1.2.2、创建文件</p>
-<p>#vim [File Name]<br>vim good.txt</p>
-<pre><code>1
-2</code></pre><p>在这里插入图片描述<br>创建文件后查看状态：</p>
-<p>在这里插入图片描述<br>4.1.2.3、工作区添加到暂存区</p>
-<p>#git add [File Name]<br>git add good.txt</p>
-<pre><code>1
-2</code></pre><p>在这里插入图片描述</p>
-<p>添加后查看状态：</p>
-<p>在这里插入图片描述<br>4.1.2.4、从缓存区撤回</p>
-<p>#git rm –cached [File Name]<br>git rm –cached good.txt</p>
-<pre><code>1
-2</code></pre><p>在这里插入图片描述<br>4.1.2.5、暂存区提交到本地库</p>
-<p>#第一种提交：git commit [File Name]<br>git commit good.txt<br>#常用提交：git commit -m “[commit message]” [File Name]<br>git commit -m “My second commit,modify good.txt” good.txt</p>
-<pre><code>1
-2
-3
-4</code></pre><p>在这里插入图片描述<br>在这里插入图片描述</p>
-<p>提交之后查看：</p>
-<p>在这里插入图片描述<br>4.1.2.6、修改文件后情况</p>
-<p>在这里插入图片描述</p>
-<p>添加到暂存区：</p>
-<p>在这里插入图片描述</p>
-<p>提交到本地库：</p>
-<p>在这里插入图片描述<br>4.1.2.7、查看历史记录【版本】控制</p>
-<p>历史记录直观感受：</p>
-<p>git log</p>
-<pre><code>1</code></pre><p>在这里插入图片描述</p>
+<p><strong>提交到本地库：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git commit -m "desc" [fileName]</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-1-3-7、查看历史记录【版本】控制"><a href="#4-1-3-7、查看历史记录【版本】控制" class="headerlink" title="4.1.3.7、查看历史记录【版本】控制"></a>4.1.3.7、查看历史记录【版本】控制</h6><p><strong>历史记录直观感受：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_log.jpg" alt=""></p>
 <p>如果日志信息【版本】很多，会导致一屏放不下，使用下面的命令，会变得好一点</p>
-<p>git log –pretty=oneline<br>git log –oneline            ——————&gt;只显示历史版本<br>git reflog                    ——————&gt;显示所有版本</p>
-<pre><code>1
-2
-3</code></pre><p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<p>在这里插入图片描述<br>4.1.2.8、前进后退历史记录<br>4.1.2.8.1、基于索引值操作【推荐】</p>
-<p>#git reset –hard [索引]<br>git reset –hard 51d4ed9</p>
-<pre><code>1
-2</code></pre><p>在这里插入图片描述<br>4.1.2.8.2、使用^符号</p>
-<pre><code>只能往后，不能往前，一个^符号，表示退一步</code></pre><p>git reset –hard HEAD^<br>git reset –hard HEAD^^<br>git reset –hard HEAD^^^<br>……<br>git reset –hard HEAD^^^^…………^^</p>
-<pre><code>1
-2
-3
-4
-5</code></pre><p>4.1.2.8.3、使用~符号</p>
-<p>git reset –hard HEAD<del>3<br>git reset –hard HEAD</del>10     —-&gt;相当于10和^符号</p>
-<pre><code>1
-2</code></pre><p>4.1.2.8.3.1、hard和soft和mixed参数对比</p>
-<pre><code>–soft
-    仅仅在本地库移动HEAD指针
-–mixed
-    在本地库移动指针
-    重置缓存区
-–hard
-    本地库移动指针
-    重置缓存区
-    重置工作区</code></pre><p>4.1.2.9、永久删除文件并找回</p>
-<p>rm [File Name]<br>rm aaa.txt</p>
-<pre><code>1
-2</code></pre><p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<p>版本回退，找回文件</p>
-<p>在这里插入图片描述<br>4.1.2.10、文件比较</p>
-<p>#git diff [File Name]—————&gt;将工作区的文件和暂存区的对应文件进行比较<br>git diff apple.txt<br>#git diff [本地库历史版本] [File Name]—————&gt;将工作区的文件和本地库历史记录进行比较<br>$ git diff HEAD^ apple.txt</p>
-<pre><code>1
-2
-3
-4</code></pre><p>在这里插入图片描述</p>
-<p>在这里插入图片描述<br>4.1.3、分支管理<br>4.1.3.1、查看所有分支</p>
-<p>git branch -v</p>
-<pre><code>1</code></pre><p>在这里插入图片描述<br>4.1.3.2、创建分支</p>
-<p>#git branch [分支]<br>git branch hot_fix</p>
-<pre><code>1
-2</code></pre><p>在这里插入图片描述<br>4.1.3.3、删除分支</p>
-<p>#git branch -D [分支名]<br>git branch -D asd</p>
-<pre><code>1
-2</code></pre><p>在这里插入图片描述<br>4.1.3.4、切换分支</p>
-<p>#git checkout [分支]<br>git checkout hot_fix</p>
-<pre><code>1
-2</code></pre><p>在这里插入图片描述<br>4.1.3.5、合并分支</p>
-<pre><code>合并之前：两条分支的版本都是一样的</code></pre><p>在这里插入图片描述</p>
-<pre><code>现在，在hot_fix分支上模拟“修改，调试Debug完成后”，并且Add、commit到本地库之后，两条分支版本不同了。</code></pre><p>在这里插入图片描述</p>
-<pre><code>现在就需要合并到一起，让主分支的版本也向前推进到Debug之后的版本。
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log --pretty=oneline</span><br><span class="line">git log --oneline  --&gt; 只显示历史版本</span><br><span class="line">git reflog  --&gt; 显示所有版本</span><br></pre></td></tr></table></figure>
 
-合并分支：
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_log1.jpg" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_log2.jpg" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/git_log3.jpg" alt=""></p>
+<h6 id="4-1-3-8、前进后退历史记录"><a href="#4-1-3-8、前进后退历史记录" class="headerlink" title="4.1.3.8、前进后退历史记录"></a>4.1.3.8、前进后退历史记录</h6><p>4.1.3.8.1、基于索引值操作【推荐】</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git reset --hard [索引]</span></span><br><span class="line">git reset --hard 51d4ed9</span><br></pre></td></tr></table></figure>
 
-    第一步：切换到接受修改的分支（被合并，增加新内容）上
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/reset_hard.jpg" alt=""></p>
+<p>4.1.3.8.2、使用^符号</p>
+<blockquote>
+<p>只能往后，不能往前，一个^符号，表示退一步</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br><span class="line">git reset --hard HEAD^^</span><br><span class="line">git reset --hard HEAD^^^</span><br><span class="line">……</span><br><span class="line">git reset --hard HEAD^^^^…………^^</span><br></pre></td></tr></table></figure>
 
-    第二步：执行merge命令
+<p>4.1.3.8.3、使用~符号</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD~3</span><br><span class="line">git reset --hard HEAD~10 --&gt; 相当于10个^符号</span><br></pre></td></tr></table></figure>
 
-        #git merge [与那个分支合并:分支名]
-        git merge hot_fix
-            1
-            2</code></pre><p>在这里插入图片描述<br>在这里插入图片描述<br>4.1.3.6、解决冲突</p>
-<pre><code>场景：有可能某一个文件，在两条分支上，都做了修改，（也是在同一个位置修改），合并会产生冲突。</code></pre><p>在这里插入图片描述</p>
-<pre><code>解决：
+<p>4.1.3.8.4、hard和soft和mixed参数对比</p>
+<ul>
+<li>soft<ul>
+<li>仅仅在本地库移动HEAD指针</li>
+</ul>
+</li>
+<li>mixed<ul>
+<li>在本地库移动指针</li>
+</ul>
+</li>
+<li>重置缓存区</li>
+<li>hard<ul>
+<li>本地库移动指针</li>
+</ul>
+</li>
+<li>重置缓存区<ul>
+<li>重置工作区</li>
+</ul>
+</li>
+</ul>
+<h6 id="4-1-2-9、永久删除文件并找回"><a href="#4-1-2-9、永久删除文件并找回" class="headerlink" title="4.1.2.9、永久删除文件并找回"></a>4.1.2.9、永久删除文件并找回</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm [File Name]</span><br><span class="line">rm aaa.txt</span><br></pre></td></tr></table></figure>
 
-    第一步：编辑文件，删除特殊符号
-    第二步：把文件修改到满意程度，保存退出
-    第三步：git add [文件名]
-    第四步：git commit -m “日志信息”
-    在这里插入图片描述在这里插入图片描述</code></pre><p>4.2、远程库操作<br>4.2.1、初始化本地库</p>
-<p>在这里插入图片描述<br>4.2.2、创建远程库</p>
-<pre><code>登录GitHub，注意：创建远程库的名字，的时候，可以和本地库名字不同，这里方便演示，起名一致</code></pre><p>在这里插入图片描述<br>4.2.3、查看本地库地址别名</p>
-<p>git remote -v</p>
-<pre><code>1</code></pre><p>在这里插入图片描述<br>4.2.4、在本地库创建远程库的别名（关联远程仓库）</p>
-<p>#git remote add [别名] [地址]<br>git remote add HelloProject <a href="https://github.com/MissLi-1/HelloWord.git" target="_blank" rel="noopener">https://github.com/MissLi-1/HelloWord.git</a></p>
-<pre><code>1
-2</code></pre><p>在这里插入图片描述</p>
-<p>在这里插入图片描述<br>4.2.5、推送操作</p>
-<p>#git push [地址的别名] [那个分支]<br>git push HelloProject master</p>
-<pre><code>1
-2</code></pre><p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<pre><code>此时页面就会有：我们本地库刚才推送的文件</code></pre><p>4.2.6、克隆远程库文件</p>
-<pre><code>#git clone [远程库地址]
-git clone https://github.com/MissLi-1/HelloWord.git
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/rm1.jpg" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/rm2.jpg" alt=""></p>
+<p><strong>版本回退，找回文件</strong></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/recover_file.jpg" alt=""></p>
+<h6 id="4-1-2-10、文件比较"><a href="#4-1-2-10、文件比较" class="headerlink" title="4.1.2.10、文件比较"></a>4.1.2.10、文件比较</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git diff [File Name]  --&gt; 将工作区的文件和暂存区的对应文件进行比较 </span></span><br><span class="line">git diff apple.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">git diff [本地库历史版本] [File Name] --&gt; 将工作区的文件和本地库历史记录进行比较  </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git diff HEAD^ apple.txt</span></span><br></pre></td></tr></table></figure>
 
-    1
-    2</code></pre><p>在这里插入图片描述</p>
-<pre><code>克隆OK好后，它会自己做好这些东西
-    完整的远程库下载到本地
-    创建远程地址别名
-    初始化本地库</code></pre><p>在这里插入图片描述<br>4.2.7、邀请别人加入自己的团队</p>
-<pre><code>场景模拟：现在MissLi将HelloWord.txt做了修改，要push到远程库，因为没有加入到团队，无法push
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/diff1.jpg" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/diff2.jpg" alt=""></p>
+<h5 id="4-1-4、分支管理"><a href="#4-1-4、分支管理" class="headerlink" title="4.1.4、分支管理"></a>4.1.4、分支管理</h5><h6 id="4-1-4-1、查看所有分支"><a href="#4-1-4-1、查看所有分支" class="headerlink" title="4.1.4.1、查看所有分支"></a>4.1.4.1、查看所有分支</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -v</span><br></pre></td></tr></table></figure>
 
-注意：这里是在两个不同的账号下分别push，第一次从本地库推送到远程可是A的账户，B从A的远程账户下克隆出来项目，进而修改，修改之后推送到A的远程库的时候，由于A没有给B权限，（也就是不在同一个团队），因此本该无法push，会有一个登陆GitHub的过程。
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/show_branch.jpg" alt=""></p>
+<h6 id="4-1-4-2、创建分支"><a href="#4-1-4-2、创建分支" class="headerlink" title="4.1.4.2、创建分支"></a>4.1.4.2、创建分支</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git branch [分支]</span></span><br><span class="line">git branch hot_fix</span><br></pre></td></tr></table></figure>
 
-在这里插入图片描述
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/create_branch.jpg" alt=""></p>
+<h6 id="4-1-4-3、删除分支"><a href="#4-1-4-3、删除分支" class="headerlink" title="4.1.4.3、删除分支"></a>4.1.4.3、删除分支</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git branch -D [分支名]</span></span><br><span class="line">git branch -D asd</span><br></pre></td></tr></table></figure>
 
-但是我这儿，直接pushOK了。没有出现登陆，说明第二次Push，也就是B在Push的时候，用的是A的账户，导致GitHub认为，A自己从本地库推送项目到远程库，又从远程库克隆项目到本地。修改完成后又推送，这一系列过程都是A所为，因为推送的时候没有出现换账户的窗口，但是还推送成功。说明，有可能就是缓存等等……
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/delete_branch.jpg" alt=""></p>
+<h6 id="4-1-4-4、切换分支"><a href="#4-1-4-4、切换分支" class="headerlink" title="4.1.4.4、切换分支"></a>4.1.4.4、切换分支</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git checkout [分支]</span></span><br><span class="line">git checkout hot_fix</span><br></pre></td></tr></table></figure>
 
-查阅资料发现：
-
-在这里插入图片描述
-
-    在这个页面你将会看到之前保存过的Git用户账号，在普通凭据标签下面，
-
-    以“git”开头的就是你git各个git远程仓库地址。选择你想要修改远程仓库的对应的条目，就可以在展开的页面进行修改和删除了。
-
-这里确实有一个git开头的链接，用户和密码都是我第一次Push的时候登录的账号和密码。删除后，再次push就出现了登录提示，当然了push是false，因为B此时还没有权限</code></pre><p>A邀请B加入团队</p>
-<p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<p>B接受邀请后</p>
-<pre><code>重新push
-
-在这里插入图片描述</code></pre><p>在这里插入图片描述<br>4.2.8、远程库拉取操作</p>
-<pre><code>A拉取下来的文件，他是远程库修改后的文件，但是并没有修改A的文件
-
-#git fetch [别名 分支]
-git fetch hello master
-
-    1
-    2</code></pre><p>在这里插入图片描述</p>
-<pre><code>发现并没有改变本地库内容，这时候需要切换到远程库分支
-想要查看拉去下来的文件，需要先切换分支
-
-在这里插入图片描述</code></pre><p>好处：确认没有问题再合并</p>
-<p>在这里插入图片描述</p>
-<pre><code>    pull操作相当于fetch+merge
-    git fetch [远程库别名]+[远程库分支名]
-    git merge [远程库别名/远程库分支名 ]
-
-#不管会不会冲突，先合并再说
-git pull hello master
-
-    1
-    2</code></pre><p>4.2.9、团队协作冲突</p>
-<pre><code>修改同一个文件的同一个位置
-
-A用户，在本地某一文件、某一位置修改了文件，并且优先于B用户推送到远程库。
-
-此时B在不知情的情况下，也在同个文件、同个位置做了修改，也来推送到远程库</code></pre><p>在这里插入图片描述此时应该：</p>
-<p>在这里插入图片描述</p>
-<p>在这里插入图片描述<br>4.2.10、跨团队协作</p>
-<pre><code>情景：A公司的项目经理和B公司的项目经理一起完成一个工程。A经理创建了一个准备环境</code></pre><p>在这里插入图片描述</p>
-<pre><code>B经理现在访问A经理所创建的远程库，并Fork一份到自己的远程库</code></pre><p>在这里插入图片描述</p>
-<pre><code>B经理克隆到自己的本地库</code></pre><p>在这里插入图片描述</p>
-<pre><code>现在B经理对&quot;环境&quot;项目做了自己的事</code></pre><p>在这里插入图片描述</p>
-<pre><code>确定无误后，需要向A经理，发起请求合并</code></pre><p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<pre><code>B 经理结束
-
-A经理开始处理</code></pre><p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<pre><code>审核代码：</code></pre><p>在这里插入图片描述</p>
-<pre><code>当觉得没有问题的时候，就可以合并了</code></pre><p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<pre><code>最后将远程库修改拉取到本地库</code></pre><p>在这里插入图片描述<br>4.2.11、SSH免密登陆</p>
-<pre><code>    进入家目录
-
-$ cd ~
-
-    1
-
-    删除.ssh文件
-
-$ rm -r .ssh/
-
-    1
-
-    运行命令生成.ssh密匙目录
-
-$ ssh-keygen -t rsa -C 1260811995@qq.com
-
-    1
-
-    进入到.ssh目录查看文件列表
-
-cd .ssh
-Is -IF
-
-    1
-    2
-
-    查看id_rsa.pub文件内容
-
-$ cat id_rsa.pub
-
-    1
-
-    复制内容，黏贴在Settings-----&gt;SSH and GPG keys
-    New SSH Key
-    输入复制的密匙信息</code></pre><p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<p>在这里插入图片描述</p>
-<p>测试免密：</p>
-<p>首先将修改的文件提交到本地仓库，这样就只剩下push到远程仓库。</p>
-<p>在这里插入图片描述<br>4.2.12、删除本地库<br>4.2.12.1、取消本地目录下关联的远程库</p>
-<p>在这里插入图片描述<br>4.2.12.2、删除.get文件</p>
-<p>rm -rf .git</p>
-<pre><code>1</code></pre><p>4.2.12.3、删除文件夹</p>
-<p>在这里插入图片描述</p>
-<pre><code>点赞 1
-收藏
-分享</code></pre>]]></content>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/checkout_branck.jpg" alt=""></p>
+<h6 id="4-1-4-5、合并分支"><a href="#4-1-4-5、合并分支" class="headerlink" title="4.1.4.5、合并分支"></a>4.1.4.5、合并分支</h6><p><strong>合并之前：两条分支的版本都是一样的</strong></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/branch_version.jpg" alt=""></p>
+<p><strong>现在，在hot_fix分支上模拟“修改，调试Debug完成后”，并且Add、commit到本地库之后，两条分支版本不同了。</strong></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/branch_version2.jpg" alt=""></p>
+<p><strong>现在就需要合并到一起，让主分支的版本也向前推进到Debug之后的版本。</strong></p>
+<p><strong>合并分支：</strong></p>
+<ul>
+<li><p>第一步：切换到接受修改的分支（被合并，增加新内容）上</p>
+</li>
+<li><p>第二步：执行merge命令</p>
+<ul>
+<li><pre><code class="shell"><span class="meta">#</span><span class="bash">git merge [与那个分支合并:分支名]</span>
+git merge hot_fix</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/merge.jpg" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/merge1.jpg" alt=""></p>
+<h6 id="4-1-4-6、解决冲突"><a href="#4-1-4-6、解决冲突" class="headerlink" title="4.1.4.6、解决冲突"></a>4.1.4.6、解决冲突</h6><blockquote>
+<p>场景：有可能某一个文件，在两条分支上，都做了修改，（也是在同一个位置修改），合并会产生冲突。</p>
+</blockquote>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/merge_err.jpg" alt=""></p>
+<blockquote>
+<p>解决：</p>
+<ul>
+<li><p>第一步：编辑文件，删除特殊符号</p>
+</li>
+<li><p>第二步：把文件修改到满意程度，保存退出</p>
+</li>
+<li><p>第三步：git add [文件名]</p>
+</li>
+<li><p>第四步：git commit -m “日志信息”</p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/merge_err1.jpg" alt=""></p>
+<p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/merge_err2.jpg" alt=""></p>
+</li>
+</ul>
+</blockquote>
+<h3 id="4-2、远程库操作"><a href="#4-2、远程库操作" class="headerlink" title="4.2、远程库操作"></a>4.2、远程库操作</h3><h4 id="4-2-1、初始化本地库"><a href="#4-2-1、初始化本地库" class="headerlink" title="4.2.1、初始化本地库"></a>4.2.1、初始化本地库</h4><p><img src="https://dhpro.gitee.io/blogsource/Git%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8/init_local.jpg" alt=""></p>
+<h4 id="4-2-2、创建远程库"><a href="#4-2-2、创建远程库" class="headerlink" title="4.2.2、创建远程库"></a>4.2.2、创建远程库</h4><blockquote>
+<p>登录GitHub，注意：创建远程库的名字，的时候，可以和本地库名字不同，这里方便演示，起名一致</p>
+</blockquote>
+<p>未完待续。。。</p>
+]]></content>
       <categories>
         <category>Git</category>
       </categories>
