@@ -1,10 +1,12 @@
 ---
 title: Arthas
-date: 2023-06-01 15:35:46
 tags: Arthas
 categories:
-- Java
-- 调试工具
+  - Java
+  - 调试工具
+abbrlink: e1a71cf6
+date: 2023-06-01 15:35:46
+cover: /img/cover/arthas.jpg
 ---
 
 # 一、简介

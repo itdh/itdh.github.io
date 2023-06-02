@@ -14,8 +14,12 @@ timezone: 'Asia/Shanghai'
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://example.com
-permalink: :year/:month/:day/:title/
-permalink_defaults:
+# permalink: # :year/:month/:day/:title/
+permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 /:abbrlink  posts也可改也可以去掉
+permalink_defaults: 
+abbrlink:
+  alg: crc32   #算法： crc16(default) and crc32
+  rep: hex     #进制： dec(default) and hex
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
@@ -97,7 +101,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-matery
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -107,21 +111,45 @@ deploy:
   repository: git@github.com:itdh/itdh.github.io.git
   branch: master
 
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: false
-    tags: true
+# 以下为 yilia 主题用的
+#jsonContent:
+#  meta: false
+#  pages: false
+#  posts:
+#    title: true
+#    date: true
+#    path: true
+#    text: false
+#    raw: false
+#    content: false
+#    slug: false
+#    updated: false
+#    comments: false
+#    link: false
+#    permalink: false
+#    excerpt: false
+#    categories: false
+#    tags: true
+
+
+aplayer:
+  meting: true
+  asset_inject: false
+
+comments:
+  # Up to two comments system, the first will be shown as default
+  # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo
+  use: Valine,Disqus
+  text: true # Display the comment name next to the button
+  # lazyload: The comment system will be load when comment element enters the browser's viewport.
+  # If you set it to true, the comment count will be invalid
+  lazyload: true
+  count: true # Display comment count in top_img
+  card_post_count: false # Display comment count in Home Page
+
+# 搜索
+search:
+  path: search.xml
+  field: post # post:文章范围、page:页面范围、all:覆盖所有
+  content: true # 内容是否包含每一篇文章的全部内容
+  # template: ./search.xml # ./search.xml 指定定制的XML模板
