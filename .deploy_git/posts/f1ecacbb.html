@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>PostgreSQL定位问题时常用SQL | @DH Blog</title><meta name="author" content="Ding Huang"><meta name="copyright" content="Ding Huang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、查看当前正在运行的 SQL1.1 SQL 语句123456789101112131415161718SELECT procpid, start, now() - start AS lap, current_query FROM (SELECT backendid, pg_stat_get_backend_pid(S.backendid) AS procpid, pg_stat_get_back">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PostgreSQL定位问题时常用SQL">
+<meta property="og:url" content="http://example.com/posts/f1ecacbb.html">
+<meta property="og:site_name" content="@DH Blog">
+<meta property="og:description" content="一、查看当前正在运行的 SQL1.1 SQL 语句123456789101112131415161718SELECT procpid, start, now() - start AS lap, current_query FROM (SELECT backendid, pg_stat_get_backend_pid(S.backendid) AS procpid, pg_stat_get_back">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/cover/PostgreSQL%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E6%97%B6%E5%B8%B8%E7%94%A8SQL.jpeg">
+<meta property="article:published_time" content="2023-08-01T06:21:30.000Z">
+<meta property="article:modified_time" content="2023-08-01T06:52:52.216Z">
+<meta property="article:author" content="Ding Huang">
+<meta property="article:tag" content="PostgreSQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/cover/PostgreSQL%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E6%97%B6%E5%B8%B8%E7%94%A8SQL.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/f1ecacbb.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PostgreSQL定位问题时常用SQL',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-01 14:52:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/modify.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover/PostgreSQL%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E6%97%B6%E5%B8%B8%E7%94%A8SQL.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="@DH Blog"><span class="site-name">@DH Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">PostgreSQL定位问题时常用SQL</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-08-01T06:21:30.000Z" title="Created 2023-08-01 14:21:30">2023-08-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-08-01T06:52:52.216Z" title="Updated 2023-08-01 14:52:52">2023-08-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/PostgreSQL/">PostgreSQL</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id data-flag-title="PostgreSQL定位问题时常用SQL"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="top-img" style="background-image: url('/img/cover/PostgreSQL%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E6%97%B6%E5%B8%B8%E7%94%A8SQL.jpeg');"></div><article class="post-content" id="article-container"><h1 id="一、查看当前正在运行的-SQL"><a href="#一、查看当前正在运行的-SQL" class="headerlink" title="一、查看当前正在运行的 SQL"></a>一、查看当前正在运行的 SQL</h1><h2 id="1-1-SQL-语句"><a href="#1-1-SQL-语句" class="headerlink" title="1.1 SQL 语句"></a>1.1 SQL 语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">procpid, </span><br><span class="line"><span class="keyword">start</span>, </span><br><span class="line">now() <span class="operator">-</span> <span class="keyword">start</span> <span class="keyword">AS</span> lap, </span><br><span class="line">current_query </span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(<span class="keyword">SELECT</span> </span><br><span class="line">backendid, </span><br><span class="line">pg_stat_get_backend_pid(S.backendid) <span class="keyword">AS</span> procpid, </span><br><span class="line">pg_stat_get_backend_activity_start(S.backendid) <span class="keyword">AS</span> <span class="keyword">start</span>, </span><br><span class="line">pg_stat_get_backend_activity(S.backendid) <span class="keyword">AS</span> current_query </span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(<span class="keyword">SELECT</span> pg_stat_get_backend_idset() <span class="keyword">AS</span> backendid) <span class="keyword">AS</span> S </span><br><span class="line">) <span class="keyword">AS</span> S </span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">current_query <span class="operator">&lt;&gt;</span> <span class="string">&#x27;idle&#x27;</span> </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> </span><br><span class="line">lap <span class="keyword">DESC</span>; </span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-字段说明"><a href="#1-2-字段说明" class="headerlink" title="1.2 字段说明"></a>1.2 字段说明</h2><table>
+<thead>
+<tr>
+<th align="center">字段名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">procpid</td>
+<td align="center">进程 id</td>
+</tr>
+<tr>
+<td align="center">start</td>
+<td align="center">进程开始时间</td>
+</tr>
+<tr>
+<td align="center">lap</td>
+<td align="center">经过时间</td>
+</tr>
+<tr>
+<td align="center">current_query</td>
+<td align="center">执行中的 SQL</td>
+</tr>
+</tbody></table>
+<h2 id="1-3-停止正在执行的-SQL"><a href="#1-3-停止正在执行的-SQL" class="headerlink" title="1.3 停止正在执行的 SQL"></a>1.3 停止正在执行的 SQL</h2><h3 id="1-3-1-方法一"><a href="#1-3-1-方法一" class="headerlink" title="1.3.1 方法一"></a>1.3.1 方法一</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> pg_cancel_backend(进程id);</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-2-方法二"><a href="#1-3-2-方法二" class="headerlink" title="1.3.2 方法二"></a>1.3.2 方法二</h3><p>使用系统命令 <code>kill -9 进程id</code></p>
+<h1 id="二、查看当前事务锁等待、持锁信息的-SQL"><a href="#二、查看当前事务锁等待、持锁信息的-SQL" class="headerlink" title="二、查看当前事务锁等待、持锁信息的 SQL"></a>二、查看当前事务锁等待、持锁信息的 SQL</h1><h2 id="2-1-SQL-语句"><a href="#2-1-SQL-语句" class="headerlink" title="2.1 SQL 语句"></a>2.1 SQL 语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span>    </span><br><span class="line">t_wait <span class="keyword">as</span>    </span><br><span class="line">(    </span><br><span class="line">  <span class="keyword">select</span> a.mode,a.locktype,a.database,a.relation,a.page,a.tuple,a.classid,a.granted,   </span><br><span class="line">  a.objid,a.objsubid,a.pid,a.virtualtransaction,a.virtualxid,a.transactionid,a.fastpath,    </span><br><span class="line">  b.state,b.query,b.xact_start,b.query_start,b.usename,b.datname,b.client_addr,b.client_port,b.application_name   </span><br><span class="line">    <span class="keyword">from</span> pg_locks a,pg_stat_activity b <span class="keyword">where</span> a.pid<span class="operator">=</span>b.pid <span class="keyword">and</span> <span class="keyword">not</span> a.granted   </span><br><span class="line">),   </span><br><span class="line">t_run <span class="keyword">as</span>   </span><br><span class="line">(   </span><br><span class="line">  <span class="keyword">select</span> a.mode,a.locktype,a.database,a.relation,a.page,a.tuple,a.classid,a.granted,   </span><br><span class="line">  a.objid,a.objsubid,a.pid,a.virtualtransaction,a.virtualxid,a.transactionid,a.fastpath,   </span><br><span class="line">  b.state,b.query,b.xact_start,b.query_start,b.usename,b.datname,b.client_addr,b.client_port,b.application_name   </span><br><span class="line">    <span class="keyword">from</span> pg_locks a,pg_stat_activity b <span class="keyword">where</span> a.pid<span class="operator">=</span>b.pid <span class="keyword">and</span> a.granted   </span><br><span class="line">),   </span><br><span class="line">t_overlap <span class="keyword">as</span>   </span><br><span class="line">(   </span><br><span class="line">  <span class="keyword">select</span> r.<span class="operator">*</span> <span class="keyword">from</span> t_wait w <span class="keyword">join</span> t_run r <span class="keyword">on</span>   </span><br><span class="line">  (   </span><br><span class="line">    r.locktype <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">distinct</span> <span class="keyword">from</span> w.locktype <span class="keyword">and</span>   </span><br><span class="line">    r.database <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">distinct</span> <span class="keyword">from</span> w.database <span class="keyword">and</span>   </span><br><span class="line">    r.relation <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">distinct</span> <span class="keyword">from</span> w.relation <span class="keyword">and</span>   </span><br><span class="line">    r.page <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">distinct</span> <span class="keyword">from</span> w.page <span class="keyword">and</span>   </span><br><span class="line">    r.tuple <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">distinct</span> <span class="keyword">from</span> w.tuple <span class="keyword">and</span>   </span><br><span class="line">    r.virtualxid <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">distinct</span> <span class="keyword">from</span> w.virtualxid <span class="keyword">and</span>   </span><br><span class="line">    r.transactionid <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">distinct</span> <span class="keyword">from</span> w.transactionid <span class="keyword">and</span>   </span><br><span class="line">    r.classid <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">distinct</span> <span class="keyword">from</span> w.classid <span class="keyword">and</span>   </span><br><span class="line">    r.objid <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">distinct</span> <span class="keyword">from</span> w.objid <span class="keyword">and</span>   </span><br><span class="line">    r.objsubid <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">distinct</span> <span class="keyword">from</span> w.objsubid <span class="keyword">and</span>   </span><br><span class="line">    r.pid <span class="operator">&lt;&gt;</span> w.pid   </span><br><span class="line">  )    </span><br><span class="line">),    </span><br><span class="line">t_unionall <span class="keyword">as</span>    </span><br><span class="line">(    </span><br><span class="line">  <span class="keyword">select</span> r.<span class="operator">*</span> <span class="keyword">from</span> t_overlap r    </span><br><span class="line">  <span class="keyword">union</span> <span class="keyword">all</span>    </span><br><span class="line">  <span class="keyword">select</span> w.<span class="operator">*</span> <span class="keyword">from</span> t_wait w    </span><br><span class="line">)    </span><br><span class="line"><span class="keyword">select</span> locktype,datname,relation::regclass,page,tuple,virtualxid,transactionid::text,classid::regclass,objid,objsubid,   </span><br><span class="line">string_agg(   </span><br><span class="line"><span class="string">&#x27;Pid: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> pid <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> pid::text <span class="keyword">end</span><span class="operator">||</span>chr(<span class="number">10</span>)<span class="operator">||</span>   </span><br><span class="line"><span class="string">&#x27;Lock_Granted: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> granted <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> granted::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , Mode: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> mode <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> mode::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , FastPath: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> fastpath <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> fastpath::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , VirtualTransaction: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> virtualtransaction <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> virtualtransaction::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , Session_State: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> state <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> state::text <span class="keyword">end</span><span class="operator">||</span>chr(<span class="number">10</span>)<span class="operator">||</span>   </span><br><span class="line"><span class="string">&#x27;Username: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> usename <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> usename::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , Database: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> datname <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> datname::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , Client_Addr: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> client_addr <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> client_addr::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , Client_Port: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> client_port <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> client_port::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , Application_Name: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> application_name <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> application_name::text <span class="keyword">end</span><span class="operator">||</span>chr(<span class="number">10</span>)<span class="operator">||</span>    </span><br><span class="line"><span class="string">&#x27;Xact_Start: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> xact_start <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> xact_start::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , Query_Start: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> query_start <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> query_start::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , Xact_Elapse: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> (now()<span class="operator">-</span>xact_start) <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> (now()<span class="operator">-</span>xact_start)::text <span class="keyword">end</span><span class="operator">||</span><span class="string">&#x27; , Query_Elapse: &#x27;</span><span class="operator">||</span><span class="keyword">case</span> <span class="keyword">when</span> (now()<span class="operator">-</span>query_start) <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> (now()<span class="operator">-</span>query_start)::text <span class="keyword">end</span><span class="operator">||</span>chr(<span class="number">10</span>)<span class="operator">||</span>    </span><br><span class="line"><span class="string">&#x27;SQL (Current SQL in Transaction): &#x27;</span><span class="operator">||</span>chr(<span class="number">10</span>)<span class="operator">||</span>  </span><br><span class="line"><span class="keyword">case</span> <span class="keyword">when</span> query <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">then</span> <span class="string">&#x27;NULL&#x27;</span> <span class="keyword">else</span> query::text <span class="keyword">end</span>,    </span><br><span class="line">chr(<span class="number">10</span>)<span class="operator">||</span><span class="string">&#x27;--------&#x27;</span><span class="operator">||</span>chr(<span class="number">10</span>)    </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span>    </span><br><span class="line">  (  <span class="keyword">case</span> mode    </span><br><span class="line">    <span class="keyword">when</span> <span class="string">&#x27;INVALID&#x27;</span> <span class="keyword">then</span> <span class="number">0</span>   </span><br><span class="line">    <span class="keyword">when</span> <span class="string">&#x27;AccessShareLock&#x27;</span> <span class="keyword">then</span> <span class="number">1</span>   </span><br><span class="line">    <span class="keyword">when</span> <span class="string">&#x27;RowShareLock&#x27;</span> <span class="keyword">then</span> <span class="number">2</span>   </span><br><span class="line">    <span class="keyword">when</span> <span class="string">&#x27;RowExclusiveLock&#x27;</span> <span class="keyword">then</span> <span class="number">3</span>   </span><br><span class="line">    <span class="keyword">when</span> <span class="string">&#x27;ShareUpdateExclusiveLock&#x27;</span> <span class="keyword">then</span> <span class="number">4</span>   </span><br><span class="line">    <span class="keyword">when</span> <span class="string">&#x27;ShareLock&#x27;</span> <span class="keyword">then</span> <span class="number">5</span>   </span><br><span class="line">    <span class="keyword">when</span> <span class="string">&#x27;ShareRowExclusiveLock&#x27;</span> <span class="keyword">then</span> <span class="number">6</span>   </span><br><span class="line">    <span class="keyword">when</span> <span class="string">&#x27;ExclusiveLock&#x27;</span> <span class="keyword">then</span> <span class="number">7</span>   </span><br><span class="line">    <span class="keyword">when</span> <span class="string">&#x27;AccessExclusiveLock&#x27;</span> <span class="keyword">then</span> <span class="number">8</span>   </span><br><span class="line">    <span class="keyword">else</span> <span class="number">0</span>   </span><br><span class="line">  <span class="keyword">end</span>  ) <span class="keyword">desc</span>,   </span><br><span class="line">  (<span class="keyword">case</span> <span class="keyword">when</span> granted <span class="keyword">then</span> <span class="number">0</span> <span class="keyword">else</span> <span class="number">1</span> <span class="keyword">end</span>)  </span><br><span class="line">) <span class="keyword">as</span> lock_conflict  </span><br><span class="line"><span class="keyword">from</span> t_unionall   </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>   </span><br><span class="line">locktype,datname,relation,page,tuple,virtualxid,transactionid::text,classid,objid,objsubid ;  </span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-字段说明"><a href="#2-2-字段说明" class="headerlink" title="2.2 字段说明"></a>2.2 字段说明</h2><table>
+<thead>
+<tr>
+<th align="center">字段名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">locktype</td>
+<td align="center">被锁定的对象类型：relation、extend、page、tuple、transactionid、virtualxid、object、userlock、advisory</td>
+</tr>
+<tr>
+<td align="center">datname</td>
+<td align="center">数据库名</td>
+</tr>
+<tr>
+<td align="center">relation</td>
+<td align="center">如果对象不是表或只是表的一部分，则此值为“NULL”，否则此值是表的OID</td>
+</tr>
+<tr>
+<td align="center">page</td>
+<td align="center">表中的页号，如果对象不是表行（tuple）或表页（relation page），则此值为“NULL”</td>
+</tr>
+<tr>
+<td align="center">tuple</td>
+<td align="center">页内的行号（tuple）</td>
+</tr>
+<tr>
+<td align="center">virtualxid</td>
+<td align="center">虚拟事务id</td>
+</tr>
+<tr>
+<td align="center">transactionid</td>
+<td align="center">事务id</td>
+</tr>
+<tr>
+<td align="center">classid</td>
+<td align="center">包含该对象系统目录的id</td>
+</tr>
+<tr>
+<td align="center">objid</td>
+<td align="center">对象在系统目录的oid</td>
+</tr>
+<tr>
+<td align="center">objsubid</td>
+<td align="center">如果对象是表列（table column），此列的值为列号，这时classid和objid指向表</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">Ding Huang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/posts/f1ecacbb.html">http://example.com/posts/f1ecacbb.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/PostgreSQL/">PostgreSQL</a></div><div class="post_share"><div class="social-share" data-image="/img/cover/PostgreSQL%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E6%97%B6%E5%B8%B8%E7%94%A8SQL.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/a524c0bb.html" title="使用docker-compose安装常用中间件"><img class="cover" src="/img/cover/%E4%BD%BF%E7%94%A8docker-compose%E5%AE%89%E8%A3%85%E5%B8%B8%E7%94%A8%E4%B8%AD%E9%97%B4%E4%BB%B6.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">使用docker-compose安装常用中间件</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info__name">Ding Huang</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/itdh"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%AD%A3%E5%9C%A8%E8%BF%90%E8%A1%8C%E7%9A%84-SQL"><span class="toc-number">1.</span> <span class="toc-text">一、查看当前正在运行的 SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-SQL-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 SQL 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 字段说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E5%81%9C%E6%AD%A2%E6%AD%A3%E5%9C%A8%E6%89%A7%E8%A1%8C%E7%9A%84-SQL"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 停止正在执行的 SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-%E6%96%B9%E6%B3%95%E4%B8%80"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 方法二</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E4%BA%8B%E5%8A%A1%E9%94%81%E7%AD%89%E5%BE%85%E3%80%81%E6%8C%81%E9%94%81%E4%BF%A1%E6%81%AF%E7%9A%84-SQL"><span class="toc-number">2.</span> <span class="toc-text">二、查看当前事务锁等待、持锁信息的 SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-SQL-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 SQL 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 字段说明</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/f1ecacbb.html" title="PostgreSQL定位问题时常用SQL"><img src="/img/cover/PostgreSQL%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E6%97%B6%E5%B8%B8%E7%94%A8SQL.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PostgreSQL定位问题时常用SQL"></a><div class="content"><a class="title" href="/posts/f1ecacbb.html" title="PostgreSQL定位问题时常用SQL">PostgreSQL定位问题时常用SQL</a><time datetime="2023-08-01T06:21:30.000Z" title="Created 2023-08-01 14:21:30">2023-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/a524c0bb.html" title="使用docker-compose安装常用中间件"><img src="/img/cover/%E4%BD%BF%E7%94%A8docker-compose%E5%AE%89%E8%A3%85%E5%B8%B8%E7%94%A8%E4%B8%AD%E9%97%B4%E4%BB%B6.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用docker-compose安装常用中间件"></a><div class="content"><a class="title" href="/posts/a524c0bb.html" title="使用docker-compose安装常用中间件">使用docker-compose安装常用中间件</a><time datetime="2023-06-09T07:23:32.000Z" title="Created 2023-06-09 15:23:32">2023-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/983a1c52.html" title="使用 IDEA 构建 Spring5.3.10 源码"><img src="/img/cover/%E4%BD%BF%E7%94%A8-IDEA-%E6%9E%84%E5%BB%BA-Spring5-3-10-%E6%BA%90%E7%A0%81.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 IDEA 构建 Spring5.3.10 源码"></a><div class="content"><a class="title" href="/posts/983a1c52.html" title="使用 IDEA 构建 Spring5.3.10 源码">使用 IDEA 构建 Spring5.3.10 源码</a><time datetime="2023-06-02T02:56:32.000Z" title="Created 2023-06-02 10:56:32">2023-06-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/e1a71cf6.html" title="Arthas"><img src="/img/cover/arthas.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Arthas"></a><div class="content"><a class="title" href="/posts/e1a71cf6.html" title="Arthas">Arthas</a><time datetime="2023-06-01T07:35:46.000Z" title="Created 2023-06-01 15:35:46">2023-06-01</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023  <i id="heartbeat" class="fa fas fa-heartbeat"></i> Ding Huang</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="7427714271" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listfolded="false" data-order="random" data-lrctype="1" data-preload="none" data-autoplay="true" muted></div><script type="text/javascript" src="/js/jquery.min.js"></script><script type="text/javascript" src="/js/chocolate.js"></script><script type="text/javascript" src="/js/cursor.js"></script><link rel="stylesheet" href="/pluginsSrc/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/aplayer/dist/APlayer.min.js"></script><script src="/pluginsSrc/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"></div></div><hr><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
