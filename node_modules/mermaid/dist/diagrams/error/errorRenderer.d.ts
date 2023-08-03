@@ -3,7 +3,7 @@
  *
  * @param cnf - Config to merge
  */
-export declare const setConf: (cnf: any) => void;
+export declare const setConf: () => void;
 /**
  * Draws a an info picture in the tag with id: id based on the graph definition in text.
  *
@@ -13,7 +13,7 @@ export declare const setConf: (cnf: any) => void;
  */
 export declare const draw: (_text: string, id: string, mermaidVersion: string) => void;
 declare const _default: {
-    setConf: (cnf: any) => void;
+    setConf: () => void;
     draw: (_text: string, id: string, mermaidVersion: string) => void;
 };
 export default _default;

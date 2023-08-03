@@ -1,4 +1,4 @@
-import type { MermaidConfig } from './config.type';
+import type { MermaidConfig } from './config.type.js';
 export declare const defaultConfig: MermaidConfig;
 export declare const updateCurrentConfig: (siteCfg: MermaidConfig, _directives: any[]) => MermaidConfig;
 /**

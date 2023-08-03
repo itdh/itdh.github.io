@@ -19,4 +19,4 @@ declare namespace _default {
     export { parseDirective };
 }
 export default _default;
-import * as commonDb from "../../commonDb";
+import * as commonDb from '../../commonDb.js';

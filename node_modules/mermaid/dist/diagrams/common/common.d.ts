@@ -1,4 +1,5 @@
-import { MermaidConfig } from '../../config.type';
+import { MermaidConfig } from '../../config.type.js';
+export declare const lineBreakRegex: RegExp;
 /**
  * Gets the rows of lines in a string
  *
@@ -15,7 +16,6 @@ export declare const getRows: (s?: string) => string[];
 export declare const removeScript: (txt: string) => string;
 export declare const sanitizeText: (text: string, config: MermaidConfig) => string;
 export declare const sanitizeTextOrArray: (a: string | string[] | string[][], config: MermaidConfig) => string | string[];
-export declare const lineBreakRegex: RegExp;
 /**
  * Whether or not a text has any line breaks
  *
@@ -37,6 +37,20 @@ export declare const splitBreaks: (text: string) => string[];
  * @returns The result from the input
  */
 export declare const evaluate: (val?: string | boolean) => boolean;
+/**
+ * Wrapper around Math.max which removes non-numeric values
+ * Returns the larger of a set of supplied numeric expressions.
+ * @param values - Numeric expressions to be evaluated
+ * @returns The smaller value
+ */
+export declare const getMax: (...values: number[]) => number;
+/**
+ * Wrapper around Math.min which removes non-numeric values
+ * Returns the smaller of a set of supplied numeric expressions.
+ * @param values - Numeric expressions to be evaluated
+ * @returns The smaller value
+ */
+export declare const getMin: (...values: number[]) => number;
 /**
  * Makes generics in typescript syntax
  *
@@ -61,5 +75,7 @@ declare const _default: {
     removeScript: (txt: string) => string;
     getUrl: (useAbsolute: boolean) => string;
     evaluate: (val?: string | boolean | undefined) => boolean;
+    getMax: (...values: number[]) => number;
+    getMin: (...values: number[]) => number;
 };
 export default _default;

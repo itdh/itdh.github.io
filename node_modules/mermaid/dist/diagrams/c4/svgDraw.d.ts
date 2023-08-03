@@ -10,17 +10,6 @@ export function insertArrowEnd(elem: any): void;
 export function insertArrowFilledHead(elem: any): void;
 export function insertDynamicNumber(elem: any): void;
 export function insertArrowCrossHead(elem: any): void;
-export function getNoteRect(): {
-    x: number;
-    y: number;
-    fill: string;
-    stroke: string;
-    width: number;
-    anchor: string;
-    height: number;
-    rx: number;
-    ry: number;
-};
 declare namespace _default {
     export { drawRect };
     export { drawBoundary };
@@ -35,8 +24,6 @@ declare namespace _default {
     export { insertDatabaseIcon };
     export { insertComputerIcon };
     export { insertClockIcon };
-    export { getNoteRect };
-    export { sanitizeUrl };
 }
 export default _default;
 /**
@@ -47,4 +34,3 @@ export default _default;
  * @param {any} conf - DrawText implementation discriminator object
  */
 declare function drawBoundary(elem: any, boundary: any, conf: any): void;
-import { sanitizeUrl } from "@braintree/sanitize-url";

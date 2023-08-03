@@ -5,6 +5,7 @@ export function drawClass(elem: SVGSVGElement, classDef: any, conf: any, diagObj
     width: number;
     height: number;
 };
+export function getClassTitleString(classDef: any): any;
 export function drawNote(elem: SVGSVGElement, note: {
     id: string;
     text: string;
@@ -20,6 +21,7 @@ export function parseMember(text: any): {
     cssStyle: string;
 };
 declare namespace _default {
+    export { getClassTitleString };
     export { drawClass };
     export { drawEdge };
     export { drawNote };
