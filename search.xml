@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>hexo-butterfly主题添加giscus评论系统</title>
+      <link href="/posts/98e7102d.html"/>
+      <url>/posts/98e7102d.html</url>
+      
+        <content type="html"><![CDATA[<p> 具体操作如下所示：</p><h1 id="一、创建仓库"><a href="#一、创建仓库" class="headerlink" title="一、创建仓库"></a>一、创建仓库</h1><p><img src="/posts/98e7102d/image-20240228102747051.png" alt="image-20240228102747051"></p><h1 id="二、安装-giscus"><a href="#二、安装-giscus" class="headerlink" title="二、安装 giscus"></a>二、安装 giscus</h1><p>安装链接：<a href="https://github.com/marketplace/giscus">giscus</a></p><blockquote><p>到页面底部，点击 Install it for free</p></blockquote><p><img src="/posts/98e7102d/image-20240228103359799.png" alt="image-20240228103359799"></p><blockquote><p>填写完信息后保存</p></blockquote><p><img src="/posts/98e7102d/image-20240228110240077.png" alt="image-20240228110240077"></p><blockquote><p>然后点击 Complete order and begin installation</p></blockquote><p><img src="/posts/98e7102d/image-20240228110819075.png" alt="image-20240228110819075"></p><blockquote><p>选择刚才创建的仓库，然后 Install</p></blockquote><p><img src="/posts/98e7102d/image-20240228111013560.png" alt="image-20240228111013560"></p><p>到这里，giscus 就已经安装完了。接下来，我们要去配置仓库的 Discussions 部分</p><h1 id="三、配置仓库的-Discussions-部分"><a href="#三、配置仓库的-Discussions-部分" class="headerlink" title="三、配置仓库的 Discussions 部分"></a>三、配置仓库的 Discussions 部分</h1><blockquote><p>打开仓库的 setting，勾选 Discussions 部分</p></blockquote><p><img src="/posts/98e7102d/image-20240228111344873.png" alt="image-20240228111344873"></p><h1 id="四、配置-giscus"><a href="#四、配置-giscus" class="headerlink" title="四、配置 giscus"></a>四、配置 giscus</h1><p>链接地址：<a href="https://giscus.app/zh-CN">giscus 配置</a></p><blockquote><p>仓库填写 用户名&#x2F;仓库名称</p></blockquote><p><img src="/posts/98e7102d/image-20240228112134948.png" alt="image-20240228112134948"></p><blockquote><p>复制启用 giscus 下方的代码块，里面的内容下面会用到</p></blockquote><p><img src="/posts/98e7102d/image-20240228112317897.png" alt="image-20240228112317897"></p><h1 id="五、butterfly-主题配置"><a href="#五、butterfly-主题配置" class="headerlink" title="五、butterfly 主题配置"></a>五、butterfly 主题配置</h1><p>打开 butterfly 主题配置文件，修改以下两处：</p><ol><li>找到下面的 comments 配置，修改 <code>use </code> 配置项为 <code>giscus</code></li></ol><p><img src="/posts/98e7102d/image-20240228113549006.png" alt="image-20240228113549006"></p><ol start="2"><li>找到下面的 giscus 配置，根据上面代码块中的信息，将对应的值填进去即可</li></ol><p><img src="/posts/98e7102d/image-20240228112705545.png" alt="image-20240228112705545"></p><p>现在， 博客文章部分就有了下边的评论区：</p><p><img src="/posts/98e7102d/image-20240228113724896.png" alt="image-20240228113724896"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringCloudAlibaba入门</title>
       <link href="/posts/4c20f373.html"/>
       <url>/posts/4c20f373.html</url>
